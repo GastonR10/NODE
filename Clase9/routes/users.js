@@ -27,7 +27,7 @@ router.put('/:id', (req, res) => {
     if(userIndex >= 0) {
         users[userIndex].name = newName;
         users[userIndex].age = newAge;
-        return res.send({ success: true, users: users });
+        return res.status(200).json({ success: true, users: users });
     } else {
         return res.send({ success: false, error: "No se encontró el usuario"});
     }
